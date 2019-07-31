@@ -1,0 +1,27 @@
+{
+  "devDependencies": {
+    "cordova-plugin-whitelist": "~1.2.0",
+    "cordova-plugin-console": "~1.0.1",
+    "cordova-plugin-statusbar": "~1.0.1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-console": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-googlemaps": {
+        "API_KEY_FOR_ANDROID": "AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck",
+        "API_KEY_FOR_IOS": "AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck"
+      }
+    },
+    "platforms": [
+      "browser",
+      "android"
+    ]
+  },
+  "dependencies": {
+    "cordova-android": "^8.0.0",
+    "cordova-plugin-googlemaps": "git+https://github.com/mapsplugin/cordova-plugin-googlemaps.git#multiple_maps",
+    "jquery": "^3.4.1"
+  }
+}
