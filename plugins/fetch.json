@@ -33,5 +33,13 @@
       "API_KEY_FOR_ANDROID": "AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck",
       "API_KEY_FOR_IOS": "AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck"
     }
+  },
+  "org.apache.cordova.geolocation": {
+    "source": {
+      "type": "registry",
+      "id": "org.apache.cordova.geolocation"
+    },
+    "is_top_level": true,
+    "variables": {}
   }
 }

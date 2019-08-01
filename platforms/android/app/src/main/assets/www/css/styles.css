@@ -13,3 +13,15 @@
 .statusbar-overlay {
     background: #000000;
 }
+
+html, body {
+      height: 100%;
+    }
+    #map_canvas { /* Must bigger size than 100x100 pixels */
+      width: 100%;
+      height: 80%;
+    }
+    button {
+      padding: .5em;
+      margin: .5em;
+    }
