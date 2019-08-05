@@ -23,23 +23,47 @@ $$(document).on('deviceready', function() {
     console.log("Device is ready!");
 });
 
-
-// Now we need to run the code that will be executed only for About page.
-
-// Option 1. Using page callback for page (for "about" page in this case) (recommended way):
-// app.onPageInit('map', function (page) {
-//     // Do something here for "about" page
-//     app.closePanel("left");
-    
-// })
-
-
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     app.closePanel("left");
     app.alert('Here comes About');
 })
+
+
+$$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    app.closePanel("left");
+    
+})
+
+$$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    app.closePanel("left");
+   // debugger;
+    $$('.form-to-data').on('click', function(){
+      debugger;
+      var formData = app.formToJSON('#my-form')
+      alert(JSON.stringify(formData));
+    }); 
+})
+
+
+/*
+//prueba para enviar informacion 
+$$.ajax({
+type: "GET",
+url: "http://localhost:3000/aux_map.html",
+dataType: "jsonp",
+data: {"hola": "hola"},
+success:function(data)
+{
+  console.log("resp",data)
+
+})
+
+*/
+
 
 $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
@@ -92,3 +116,4 @@ function onError(error) {
     app.alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');
 }
+
