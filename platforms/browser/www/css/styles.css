@@ -28,3 +28,15 @@ button {
 .page-previous {
     display: none;
 }
+
+.block-style{
+  display: inline-block !important;
+  width: 32% !important;
+  text-align: center;
+}
+.text-area-big{
+  height: 248px !important;
+}
+.center-text{
+  text-align: center;
+}

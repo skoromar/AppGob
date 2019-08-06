@@ -1,0 +1,4 @@
+AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck
+
+
+cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck" --variable API_KEY_FOR_IOS="AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck"

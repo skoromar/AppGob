@@ -12,6 +12,7 @@ var $$ = Dom7;
 let latitude = 0;
 let longitude = 0;
 
+
 // Add view
 var mainView = app.addView('.view-main', {
     // Because we want to use dynamic navbar, we need to enable it for this view:
@@ -33,36 +34,36 @@ $$(document).on('pageInit', '.page[data-page="about"]', function (e) {
 
 $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    app.closePanel("left");
+    app.closePanel("left")
     
 })
 
 $$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    app.closePanel("left");
+    app.closePanel("left")
    // debugger;
     $$('.form-to-data').on('click', function(){
-      debugger;
       var formData = app.formToJSON('#my-form')
-      alert(JSON.stringify(formData));
+      $$.ajax({
+          type: "POST",
+          url: "http://localhost:8080/api/listen",
+          dataType: "json",
+          data: formData,
+          success:function(data)
+          {
+            console.log("resp",data)
+            app.alert("El mensaje ha sido enviado exitosanente.")
+          },
+          error:function(err){
+            console.log("err",err);
+            app.alert("Ocurrio un error, por favor intente de nuevo más tarde.")
+          }
+      });
     }); 
 })
 
 
-/*
-//prueba para enviar informacion 
-$$.ajax({
-type: "GET",
-url: "http://localhost:3000/aux_map.html",
-dataType: "jsonp",
-data: {"hola": "hola"},
-success:function(data)
-{
-  console.log("resp",data)
 
-})
-
-*/
 
 
 $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
