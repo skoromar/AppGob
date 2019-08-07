@@ -40,3 +40,9 @@ button {
 .center-text{
   text-align: center;
 }
+.dataTables_filter {
+display: none; 
+}
+.dataTables_length{
+  display: none; 
+}
