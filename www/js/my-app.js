@@ -41,24 +41,43 @@ $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     app.closePanel("left")
-   // debugger;
+
     $$('.form-to-data').on('click', function(){
       var formData = app.formToJSON('#my-form')
-      $$.ajax({
-          type: "POST",
-          url: "http://localhost:8080/api/listen",
-          dataType: "json",
+
+      $.ajax({
+          url: 'http://127.0.0.1:8000/api/listen',
+          dataType: "jsonp",
+          jsonp: "Callback",
+          jsonpCallback: 'Callback',
+          crossDomain: true,
           data: formData,
-          success:function(data)
-          {
-            console.log("resp",data)
-            app.alert("El mensaje ha sido enviado exitosanente.")
-          },
-          error:function(err){
-            console.log("err",err);
-            app.alert("Ocurrio un error, por favor intente de nuevo más tarde.")
-          }
+          contentType: "application/json"
+      }).done(function(response){
+        alert("hice la peticion de usuarios");
+        
+      }).fail(function(error){
+        alert(JSON.stringify(error))
       });
+      // $$.ajax({
+      //     url: 'http://localhost:8080/api/listen?callback=?',
+          
+      //     dataType: "jsonp",
+      //     jsonp: "callback",
+      //     jsonpCallback: 'callback',
+      //     crossDomain: true,
+      //     data: formData,
+      //     contentType: "application/json",
+      //     success:function(data)
+      //     {
+      //       console.log("resp",data)
+      //       app.alert("El mensaje ha sido enviado exitosanente.")
+      //     },
+      //     error:function(err){
+      //       console.log("err",err);
+      //       alert(JSON.stringify(err))
+      //     }
+      // });
     }); 
 })
 
