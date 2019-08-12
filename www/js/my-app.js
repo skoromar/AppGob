@@ -12,7 +12,7 @@ var conf = {
       url:"localhost"
     },
     production:{
-      url:"192.168.0.8"
+      url:"192.168.110.23"
     }
 
 }[env]
@@ -126,7 +126,7 @@ $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
                   title: information_clubs[x].name,
                   snippet: information_clubs[x].description,
                   url: information_clubs[x].url,
-                  icon:'../img/umbrela-icon.png'
+                  icon: 'http://'+conf.url+':8000/public/img/umbrela-icon.png'
                 })  
             };
              
@@ -165,7 +165,7 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
           var f_date = days[date.getDay()]+" "+date.getDate();
           items_config.push({
               title: resp[x].title,
-              picture: '../img/umbrella.png',
+              picture: 'http://'+conf.url+':8000/public/img/umbrella.png',
               hour: resp[x].hour,
               date: f_date
           })
