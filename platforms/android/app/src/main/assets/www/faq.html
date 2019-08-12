@@ -17,28 +17,412 @@
 <div class="pages">
     <div data-page="faq" class="page">
         <div class="page-content">
-             <!-- Custom Accordion -->
-            <div class="list-block ">
-    <ul>
-        <li class="accordion-item">
-            <a href="" class="item-link item-content">
-                <div class="item-inner">
-                    <div class="item-title">Item 1</div>
-                </div>
-            </a> 
-            <div class="accordion-item-content">Item 1 content ...</div>
-        </li>
-        <li class="accordion-item">
-            <a href="" class="item-link item-content">
-                <div class="item-inner">
-                    <div class="item-title">Item 2</div>
-                </div>
-            </a> 
-            <div class="accordion-item-content">Item 2 content ...</div>
-        </li>
-    </ul>
-</div>
+             <!-- iniciooo -->
 
+         <h2>Localiza tu club más cercano</h2>    
+        <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+            <div class="searchbar-input">
+              <input type="search" placeholder="Search"><a href="#" class="searchbar-clear"></a>
+            </div><a href="#" class="searchbar-cancel">Cancel</a>
+      </form>
+ 
+      <!-- Search Bar overlay -->
+      <div class="searchbar-overlay"></div>
+ 
+      <div class="page-content">
+        <!-- This block will be displayed if nothing found -->
+        <div class="content-block searchbar-not-found">
+          <div class="content-block-inner">Nothing found</div>
+        </div>
+     
+        <!-- This block will be displayed if anything found, and this list block is used a searbar target -->
+        <div class="list-block list-block-search searchbar-found search-info">
+              <ul>
+                    <li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">AGUASCALIENTES</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9870">Aguascalientes</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">BAJA CALIFORNIA NORTE</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9661">CIJ Mexicali</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9671">CIJ Tijuana-Guaycura</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9660">CIJ Tijuana-Soler</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9670">Unidad de Hospitalización Tijuana</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9663">Unidad de Tratamiento a Personas con Problemas del Consumo de Heroína Tijuana</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">BAJA CALIFORNIA SUR</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9650">CIJ La Paz</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9651">CIJ Los Cabos</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">CAMPECHE</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9941">CIJ Ciudad del Carmen</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">COAHUILA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9730">CIJ Laguna-Coahuila</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9520">CIJ Piedras Negras</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9530">CIJ Saltillo</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9734">Centro Torreón Oriente</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">COLIMA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9860">CIJ Colima</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9861">CIJ Manzanillo</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9862">CIJ Tecomán</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">CHIAPAS</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9161">CIJ Tapachula</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9160">CIJ Tuxtla Gutiérrez</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9162">Unidad de Hospitalización Ixbalanqué</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">CHIHUAHUA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9720">CIJ Chihuahua</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9712">CIJ Ciudad Juárez Norte</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9710">Unidad de Tratamiento a Personas con Problemas del Consumo de Heroína    Cd. Juárez</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9713"> Unidad de Hospitalización Cd. Juárez</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DISTRITO FEDERAL</div>
+                        </div>
+                    </a> 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN ÁLVARO OBREGÓN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9460">CIJ Álvaro Obregón Centro</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9462">CIJ Álvaro Obregón Oriente</div>  
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN AZCAPOTZALCO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9320">CIJ Azcapotzalco</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN BENITO JUÁREZ</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9450">CIJ Benito Juárez</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN COYOACÁN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9440">CIJ Coyoacán</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN CUAJIMALPA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9461">CIJ Cuajimalpa</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN CUAUHTÉMOC</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9420">CIJ Cuauhtémoc Oriente</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9410">CIJ Cuauhtémoc Poniente</a></div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN GUSTAVO A. MADERO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9351">CIJ Gustavo A. Madero Aragón</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9310">CIJ Gustavo A. Madero Norte</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9350">CIJ Gustavo A. Madero Oriente</div>                           
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN IZTAPALAPA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9471">Unidad de Hospitalización Iztapalapa </div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9370">CIJ Iztapalapa Oriente</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9470">CIJ Iztapalapa Poniente</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN MAGDALENA CONTRERAS</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9481">CIJ Magdalena Contreras</div>                                                             </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN MIGUEL HIDALGO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9430">CIJ Miguel Hidalgo</div>   
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN TLALPAN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9482">CIJ Tlalpan Viaducto</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN VENUSTIANO CARRANZA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9360">CIJ Venustiano Carranza</div> 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DELEGACIÓN XOCHIMILCO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9441">CIJ Xochimilco</div>                          
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">DURANGO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9680">CIJ Durango</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9733">CIJ Laguna-Durango</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">ESTADO DE MÉXICO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9490">CIJ Chalco</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9380">CIJ Ecatepec</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9383">Unidad de Hospitalización Ecatepec</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9381">CIJ Naucalpan</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9384">Unidad de Hospitalización Naucalpan</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9340">CIJ Nezahualcóyotl</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9382">CIJ Texcoco</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9330">CIJ Tlalnepantla</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9052">CIJ Toluca</div>                 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">GUANAJUATO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9050">CIJ Celaya</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9820">CIJ León</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9051">CIJ Salamanca</div>    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">GUERRERO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9210">CIJ Acapulco</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9220">Unidad de Hospitalización Punta Diamante</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9230">CIJ Chilpancingo</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9240">CIJ Ixtapa – Zihuatanejo</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">HIDALGO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9010">CIJ Pachuca</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9011">CIJ Tula</div>                </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">JALISCO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9880">CIJ Guadalajara Centro</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9881">CIJ Guadalajara Sur</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9811">CIJ Puerto Vallarta</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9850">CIJ Tlaquepaque</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9842">CIJ Zapopan "Kena Moreno"</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9841">CIJ Zapopan Norte</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9882">Unidad de Hospitalización Zapotlán El Grande</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9840">Unidad de Hospitalización Zapopan</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">MICHOACÁN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9894">CIJ Morelia</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9895">CIJ La Piedad</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9892">CIJ Zamora</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">MORELOS</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9020">CIJ Cuernavaca</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">NAYARIT</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9883">CIJ Tepic</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">NUEVO LEÓN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9551">CIJ Apodaca</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9550">CIJ Guadalupe</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9552">Centro de Día del CIJ Guadalupe</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9510">CIJ Monterrey</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9511">CIJ San Nicolás de los Garza</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9560">Unidad de Hospitalización Nuevo León</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">OAXACA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9171">CIJ Huatulco</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9170">CIJ Oaxaca</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">PUEBLA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9030">CIJ Puebla</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9031">CIJ Tehuacán</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">QUERÉTARO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9040">CIJ Querétaro</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">QUINTANA ROO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9950">CIJ Cancún</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9952">CIJ Chetumal</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9951">CIJ Cozumel</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9953">CIJ Playa del Carmen</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">SAN LUIS POTOSÍ</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9830">CIJ San Luis Potosí</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">SINALOA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9610">CIJ Culiacán</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9615">CIJ Culiacán   Oriente</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9611">CIJ Guamúchil</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9612">CIJ Guasave</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9613">CIJ Los Mochis</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9616">CIJ Los Mochis Centro</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9630">CIJ Mazatlán</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9633">CIJ Escuinapa</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9614">Unidad de Hospitalización Culiacán</div>
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">SONORA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9620">CIJ Hermosillo</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9640">CIJ Nogales</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">TABASCO</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9180">CIJ Villahermosa</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">TAMAULIPAS</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9542">CIJ Ciudad Victoria</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9541">CIJ Reynosa</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9540">CIJ Tampico</div>                    
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">TLAXCALA</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9032">CIJ Tlaxcala</div> 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">VERACRUZ</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9111">CIJ Poza Rica</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9110">CIJ Xalapa</div> 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">YUCATÁN</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9930">CIJ Mérida</div> 
+                    </li><li class="accordion-item">
+                    <a href="" class="item-link item-content">
+                        <div class="item-inner">
+                            <div class="item-title">ZACATECAS</div>
+                        </div>
+                    </a> 
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9893">CIJ Fresnillo Pinacoteca</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9896">Unidad de Hospitalización Jerez</div>
+                            <div class="accordion-item-content"  href="http://www.cij.org.mx/Contenidos/Red_Atencion/detallecentros.asp?cec=9890">CIJ Zacatecas</div>        
+                </ul>
+            </div>
+        </div>
+  <!--finaaaaaal -->
         </div>
     </div>
 </div>

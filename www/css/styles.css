@@ -46,3 +46,18 @@ display: none;
 .dataTables_length{
   display: none; 
 }
+.text-min{
+  font-size: 8px;
+}
+
+.myList{
+  min-height: 0px !important; 
+  min-width: 115px !important;
+  border-left: solid;
+  max-width: 115px !important;
+}
+
+.search-info{
+      margin: -12px 0 !important;
+}
+
