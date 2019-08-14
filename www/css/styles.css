@@ -63,7 +63,7 @@ display: none;
 
 .style-menu{
     padding: 10px;
-    border: solid 2px;
+    /*border: solid 2px;*/
     margin-top: -8%;
 }
 
@@ -72,4 +72,33 @@ display: none;
 }
 .element-firtsh{
       margin-top: 25px;
+}
+.listen-img{
+  background-image: url("http://192.168.0.8:8000/public/img/escuchemos.png");
+  background-size: 100% 100%;
+  height: 20px;
+}
+.video-img{
+  background-image: url("http://192.168.0.8:8000/public/img/juntos2.png");
+  background-size: 100% 100%;
+  height: 20px;
+}
+.calendar-img{
+  background-image: url("http://192.168.0.8:8000/public/img/agenda.png");
+  background-size: 100% 100%;
+  height: 20px;
+}
+.net-img{
+  background-image: url("http://192.168.0.8:8000/public/img/red.png");
+  background-size: 100% 100%;
+  height: 20px;
+}
+.club-img{
+  background-image: url("http://192.168.0.8:8000/public/img/clubs.png");
+  background-size: 100% 100%;
+  height: 20px;
+}
+.img-background{
+  background-image: url("http://192.168.0.8:8000/public/img/juntos.png");
+  background-size: 100% 100%;
 }

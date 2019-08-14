@@ -6,10 +6,10 @@ var app = new Framework7({
   }
 });
 
-var env = "production";//production -sandbox
+var env = "sandbox";//production -sandbox
 var conf = {
     sandbox:{
-      url:"localhost"
+      url: "192.168.0.8"//localhost
     },
     production:{
       url:"192.168.110.23"
@@ -55,6 +55,11 @@ $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
     
 })
 
+$$(document).on('pageInit', '.page[data-page="video"]', function (e) {
+    // Following code will be executed for page with data-page attribute equal to "about"
+    app.closePanel("left")
+    
+})
 
 $$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
