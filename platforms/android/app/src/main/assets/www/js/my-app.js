@@ -131,15 +131,20 @@ function getMap(information_clubs,Callback){
             snippet: "Descripcin",
             url: 'https://goo.gl/maps/iw1YNgkhkiRoFZSL7'
           })  
-
+          div.style.backgroundColor = "#222426 !important";
+          map.one(plugin.google.maps.event.MAP_READY, function() {
+            Callback(div);
+          });
+          //debugger;
           
-          Callback();
       }, onError);
 
 }
 
-$$(document).on('pageInit', '.page[data-page="map"]', function (e) {
+$$(document).on('pageInit', '.page[data-page="mapad"]', function (e) {
   
+
+
     // Following code will be executed for page with data-page attribute equal to "about"
     //debugger;
     $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/clubs.png")'); 
@@ -148,11 +153,10 @@ $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
     requestServer('get',null,'club',function(resp){
         console.log(resp);
         var information_clubs = resp.data;
-        getMap(information_clubs,function(){
+        getMap(information_clubs,function(div){
+            
+            $$(".page-content").css("background-color","#222426"); 
 
-          setTimeout(function(){ 
-            $(".back-build").css("background-color","#FF0000 !important"); 
-          }, 3000);
         })
 
     });

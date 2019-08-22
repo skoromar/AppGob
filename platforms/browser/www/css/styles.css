@@ -131,3 +131,19 @@ input[type=radio]:checked~.item-inner{
 .text-black{
   color: #000000 !important;
 }
+
+.header-map{
+      width: 110%;
+  height: 100px;
+      margin-bottom: 0%;
+      background-color: #222426 !important;
+      
+      margin-left: -15px;
+          padding-top: 0px;
+          margin-top: -5px;
+}
+
+.text-map{
+  font-size: 20px;  
+  font-weight: bold;
+}
