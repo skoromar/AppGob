@@ -154,7 +154,7 @@ $$(document).on('pageInit', '.page[data-page="mapad"]', function (e) {
         console.log(resp);
         var information_clubs = resp.data;
         getMap(information_clubs,function(div){
-            
+
             $$(".page-content").css("background-color","#222426"); 
 
         })
@@ -192,7 +192,11 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
               picture: 'http://'+conf.url+':8000/public/img/umbrella.png',
               hour: resp[x].hour,
               date: f_date,
-              id:   resp[x]._id
+              id:   resp[x]._id,
+              address: resp[x].address,
+              image: resp[x].image,
+              description: resp[x].description,
+
           };
           items_config.push(struncture);
           info_fast[resp[x]._id]= struncture;
@@ -235,8 +239,11 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
                       '<p><a href="#" class="close-popup"><i class="f7-icons list-icons">close</i></a></p>'+
                       
                         '<h3 class="title-modal">'+info_fast[this.value].title+'</h3>'+
-                        '<p class="information-modal">'+info_fast[this.value].date+'</p>'+
-                        '<p class="information-modal">'+info_fast[this.value].hour+'</p>'+
+                        '<p class="information-modal"><b>¿Cuándo?</b> <br>'+info_fast[this.value].date+
+                        ' la hora del evento será a las '+info_fast[this.value].hour+' </p>'+
+                        '<p class="information-modal"><b>Información del evento: </b>'+info_fast[this.value].description+'</p>'+
+                        '<p class="information-modal"><b>¿En dónde?</b><br>'+info_fast[this.value].address+'</p>'+
+                        '<img src="http://'+conf.url+':8000/public/img/'+info_fast[this.value].image+'" width="100%" height="200" >'+
 
                     '</div>'+
                   '</div>'+
