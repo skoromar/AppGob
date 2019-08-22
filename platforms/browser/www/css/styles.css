@@ -133,17 +133,17 @@ input[type=radio]:checked~.item-inner{
 }
 
 .header-map{
-      width: 110%;
+  width: 110%;
   height: 100px;
-      margin-bottom: 0%;
-      background-color: #222426 !important;
-      
-      margin-left: -15px;
-          padding-top: 0px;
-          margin-top: -5px;
+  margin-bottom: 0%;
+  background-color: #222426 !important;
+  margin-left: -5%;
+  padding-top: 16%;
+  margin-top: -5%;
 }
 
 .text-map{
-  font-size: 20px;  
+  font-size: 2em;  
   font-weight: bold;
+  margin-top:  -5%;
 }

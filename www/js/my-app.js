@@ -6,7 +6,7 @@ var app = new Framework7({
   }
 });
 
-var env = "sandbox";//production -sandbox
+var env = "production";//production -sandbox
 var conf = {
     sandbox:{
       url: "192.168.0.8"//localhost
