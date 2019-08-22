@@ -39,88 +39,78 @@ var mainView = app.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
+    $('.listen-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/escuchemos.png")');  
+    $('.video-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos2.png")');  
+    $('.calendar-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/agenda.png")');  
+    $('.net-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/red.png")');  
+    $('.club-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/clubs.png")');  
+    $('.img-background').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos.png")');  
 });
 
 // Option 2. Using live 'pageInit' event handlers for each page
-$$(document).on('pageInit', '.page[data-page="about"]', function (e) {
+$$(document).on('pageInit', '.page[data-page="index"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     app.closePanel("left");
+     $$(".navbar").css("background-image","none");
+
+      $('.img-background').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos.png")');  
 
 })
-
-
 $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
     app.closePanel("left")
-    
+    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/red.png")'); 
 })
 
 $$(document).on('pageInit', '.page[data-page="video"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    app.closePanel("left")
+    app.closePanel("left");
+    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos2.png")'); 
     
 })
 
 $$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
+    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/escuchemos.png")'); 
     // Following code will be executed for page with data-page attribute equal to "about"
-    app.closePanel("left")
+    app.closePanel("left");
+    //$$(".banner-action").html('<h3 class="center-text">Cuentanos tu historia, <br> te queremos escuchar</h3>'); 
     $$('.form-to-data').on('click', function(){
       var formData = app.formToJSON('#my-form');
       requestServer('post',formData,'listen',function(resp){
           if(resp.status="success"){
-              app.alert("Mensaje enviado con exito.");
+              app.alert("Gracias","Mensaje enviado con exito.");
             }else{
-              app.alert("Ha ocurrido un error al enviar su mensaje, intente más tarde.");
+              app.alert("Error","Ha ocurrido un error al enviar su mensaje");
 
             }
       });
-     
-      // $.ajax({
-      //       url: 'http://localhost:8000/api/listen',
-      //       type: 'post',
-      //       dataType: "jsonp",
-      //       jsonp: "Callback",
-      //       jsonpCallback: 'Callback',
-      //       crossDomain: true,
-      //       data: {'name':'name','email':'email'},
-      //       contentType: "application/json"
-      //     }).done(function(response){
-      //       console.log('response',response)
-      //     }).fail(function(error){
-      //       console.log('error',error);
-      //     });
     }); 
 })
 
 
+function getMap(information_clubs,Callback){
 
-
-
-$$(document).on('pageInit', '.page[data-page="map"]', function (e) {
-    // Following code will be executed for page with data-page attribute equal to "about"
-    //debugger;
-    app.closePanel("left");
-
-    requestServer('get',null,'club',function(resp){
-        console.log(resp);
-        var information_clubs = resp.data;
-        navigator.geolocation.getCurrentPosition(function(position){
+  navigator.geolocation.getCurrentPosition(function(position){
           
           var div = document.getElementById("map_canvas");
           plugin.google.maps.environment.setEnv({
             'API_KEY_FOR_BROWSER_RELEASE': 'AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck',
             'API_KEY_FOR_BROWSER_DEBUG': 'AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck'
           });
-          var element = document.getElementById('geolocation');
-          element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                              'Longitude: '          + position.coords.longitude             + '<br />' ;
+          // var element = document.getElementById('geolocation');
+          // element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+          //                     'Longitude: '          + position.coords.longitude             + '<br />' ;
           latitude = position.coords.latitude; // Latitud
           longitude = position.coords.longitude; // Longitud
           var options = {
               camera: {
                 target: {lat: latitude, lng: longitude},
                 zoom: 15
-              }
+              },
+              backgroundColor: '#222426'
+              // styles: [
+              //   {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+              // ]
             };
           var map = plugin.google.maps.Map.getMap(div,options);
           
@@ -134,9 +124,6 @@ $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
                   icon: 'http://'+conf.url+':8000/public/img/umbrela-icon.png'
                 })  
             };
-             
-
-
          }
           var marker = map.addMarker({
             position: {lat: latitude, lng: longitude},
@@ -146,7 +133,28 @@ $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
           })  
 
           
+          Callback();
       }, onError);
+
+}
+
+$$(document).on('pageInit', '.page[data-page="map"]', function (e) {
+  
+    // Following code will be executed for page with data-page attribute equal to "about"
+    //debugger;
+    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/clubs.png")'); 
+    app.closePanel("left");
+
+    requestServer('get',null,'club',function(resp){
+        console.log(resp);
+        var information_clubs = resp.data;
+        getMap(information_clubs,function(){
+
+          setTimeout(function(){ 
+            $(".back-build").css("background-color","#FF0000 !important"); 
+          }, 3000);
+        })
+
     });
 
     
@@ -158,24 +166,35 @@ $$(document).on('pageInit', '.page[data-page="map"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
 
+    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/agenda.png")'); 
+
     app.closePanel("left");
-    var days = ["Dom","Lun","Mar","Mie","Jue","Vie","Sab"]
+    var days = ["Dom","Lun","Mar","Mie","Jue","Vie","Sab"];
+    var months= ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
     var month = new Date().getMonth()+1;
+    var year = new Date().getFullYear()
+    $$(".month-event").html(months[month-1]+" "+year);
     requestServer('get',null,'event/'+month,function(resp){
       console.log(resp)
-      var items_config =  []
+      var items_config =  [];
+      var info_fast = {};
       for(var x in resp){
 
           var date = new Date(resp[x].date);
           var f_date = days[date.getDay()]+" "+date.getDate();
-          items_config.push({
+
+          var struncture = {
               title: resp[x].title,
               picture: 'http://'+conf.url+':8000/public/img/umbrella.png',
               hour: resp[x].hour,
-              date: f_date
-          })
+              date: f_date,
+              id:   resp[x]._id
+          };
+          items_config.push(struncture);
+          info_fast[resp[x]._id]= struncture;
       }
       console.log('items_config',items_config);
+      console.log('info_fast',info_fast);
       var myList = app.virtualList('.list-block.virtual-list', {
     // Array with items data
         items: items_config,
@@ -190,7 +209,7 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
                                '   <div class="col-100 text-min">{{date}}</div>'+
                                '   <div class="col-100 text-min">{{hour}}</div>'+
                                ' </div>'+
-                              '  <input type="checkbox" name="my-checkbox" value="Movies">'+
+                              '  <input type="radio" name="radio-event" value="{{id}}" >'+
                               '  <div class="item-media">'+
                               '    <i class="icon icon-form-checkbox"></i>'+
                               '  </div>'+
@@ -202,9 +221,28 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
 
       });   
 
+      $$('input[type=radio][name=radio-event]').change(function() {
+        console.log(info_fast[this.value])
+           var popupHTML = 
+               
+                  '<div class="popup" style="background-color:#222426 !important;">'+
+                   '<div class="page-content theme-gray">'+
+                    '<div class="content-block ">'+
+                      '<p><a href="#" class="close-popup"><i class="f7-icons list-icons">close</i></a></p>'+
+                      
+                        '<h3 class="title-modal">'+info_fast[this.value].title+'</h3>'+
+                        '<p class="information-modal">'+info_fast[this.value].date+'</p>'+
+                        '<p class="information-modal">'+info_fast[this.value].hour+'</p>'+
 
+                    '</div>'+
+                  '</div>'+
+                '</div>'
+             app.popup(popupHTML);
+      });
     });
 })
+
+
 
 
 // onError Callback receives a PositionError object
