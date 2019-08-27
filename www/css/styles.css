@@ -147,3 +147,6 @@ input[type=radio]:checked~.item-inner{
   font-weight: bold;
   margin-top:  -5%;
 }
+.accordion-item-content{
+  margin-left: 7%;
+}
