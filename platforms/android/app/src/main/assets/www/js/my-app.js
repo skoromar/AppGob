@@ -65,63 +65,78 @@ $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
     loader();
     $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/red.png")'); 
 
-    var arr_i = {
-      "123":{
-        name:"Aguascalientes",
-        locations:[{name:"Aguascalientes",description:"description Aguascalientes",address:"direccion Aguascalientes"}]
-      },
-      "456":{
-        name:"BAJA CALIFORNIA NORTE",
-        locations:[
-                    {name:"CIJ Mexicali",description:"description Mexicali",address:"direccion Mexicali"},
-                    {name:"CIJ Tijuana-Guaycura",description:"description Tijuana-Guaycura",address:"direccion Tijuana-Guaycura"},
-                    {name:"CIJ Tijuana-Soler",description:"description Tijuana-Soler",address:"direccion Tijuana-Soler"}
-                  ]
-      },
-      "789":{
-        name:"BAJA CALIFORNIA SUR",
-        locations:[
-                    {name:"CIJ La Paz",description:"description La Paz",address:"direccion La Paz"},
-                    {name:"CIJ Los Cabos",description:"description Los Cabos",address:"direccion Los Cabos"}
-                  ]
-      }
-    };
-    var template ="";
-    for(var x in arr_i){
-      template+='<li class="accordion-item">'+
-       '     <a href="" class="item-link item-content">'+
-       '         <div class="item-inner">'+
-       '             <div class="item-title">'+arr_i[x].name+'</div>'+
-       '         </div>'+
-       '     </a> ';
-       var locations = arr_i[x].locations;
-       for(var y in locations){
-            template+='     <div class="accordion-item-content " ><a id="'+x+'-'+y+'" class="show-modal-info" href="" >'+locations[y].name+'</a></div>';
-        
-       }
-       
-       template+=' </li>';
-    }
 
-    $(".mylist").html(template);
-    $$(".show-modal-info").on('click',function(){
-        var id = this.id.split("-");
-        var popupHTML = 
-       
-          '<div class="popup" style="background-color:#222426 !important;">'+
-           '<div class="page-content theme-gray">'+
-            '<div class="content-block ">'+
-              '<p><a href="#" class="close-popup"><i class="f7-icons list-icons">close</i></a></p>'+
-              
-                '<h3 class="title-modal">'+arr_i[id[0]].name+'</h3>'+
-                '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].name+'</h4>'+
-                '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].description+'</h4>'+
-                '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].address+'</h4>'+
-            '</div>'+
-          '</div>'+
-        '</div>'
-     app.popup(popupHTML);
-    })         
+
+    requestServer('get',null,'location',function(resp){
+        
+        var information_location = resp.data;
+
+        console.log('information_location',information_location);
+        var arr_i = {};
+        for(var x in information_location){
+            arr_i[information_location[x]._id]= information_location[x].information;
+            arr_i[information_location[x]._id].name= information_location[x].name;
+        }
+        // var arr_i = {
+        //   "123":{
+        //     name:"Aguascalientes",
+        //     locations:[{name:"Aguascalientes",description:"description Aguascalientes",address:"direccion Aguascalientes"}]
+        //   },
+        //   "456":{
+        //     name:"BAJA CALIFORNIA NORTE",
+        //     locations:[
+        //                 {name:"CIJ Mexicali",description:"description Mexicali",address:"direccion Mexicali"},
+        //                 {name:"CIJ Tijuana-Guaycura",description:"description Tijuana-Guaycura",address:"direccion Tijuana-Guaycura"},
+        //                 {name:"CIJ Tijuana-Soler",description:"description Tijuana-Soler",address:"direccion Tijuana-Soler"}
+        //               ]
+        //   },
+        //   "789":{
+        //     name:"BAJA CALIFORNIA SUR",
+        //     locations:[
+        //                 {name:"CIJ La Paz",description:"description La Paz",address:"direccion La Paz"},
+        //                 {name:"CIJ Los Cabos",description:"description Los Cabos",address:"direccion Los Cabos"}
+        //               ]
+        //   }
+        // };
+        var template ="";
+        for(var x in arr_i){
+          template+='<li class="accordion-item">'+
+           '     <a href="" class="item-link item-content">'+
+           '         <div class="item-inner">'+
+           '             <div class="item-title">'+arr_i[x].name+'</div>'+
+           '         </div>'+
+           '     </a> ';
+           var locations = arr_i[x].locations;
+           for(var y in locations){
+                template+='     <div class="accordion-item-content " ><a id="'+x+'-'+y+'" class="show-modal-info" href="" >'+locations[y].name+'</a></div>';
+            
+           }
+           
+           template+=' </li>';
+        }
+
+        $(".mylist").html(template);
+        $$(".show-modal-info").on('click',function(){
+            var id = this.id.split("-");
+            var popupHTML = 
+           
+              '<div class="popup" style="background-color:#222426 !important;">'+
+               '<div class="page-content theme-gray">'+
+                '<div class="content-block ">'+
+                  '<p><a href="#" class="close-popup"><i class="f7-icons list-icons">close</i></a></p>'+
+                  
+                    '<h3 class="title-modal">'+arr_i[id[0]].name+'</h3>'+
+                    '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].name+'</h4>'+
+                    '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].description+'</h4>'+
+                    '<h4 class="title-modal">'+arr_i[id[0]]['locations'][id[1]].address+'</h4>'+
+                '</div>'+
+              '</div>'+
+            '</div>'
+         app.popup(popupHTML);
+        }) 
+
+    });
+            
     
 
 })
