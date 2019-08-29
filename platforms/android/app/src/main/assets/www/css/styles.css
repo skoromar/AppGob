@@ -30,10 +30,11 @@ button {
 }
 
 .block-style{
-  display: inline-block !important;
   width: 32% !important;
   text-align: center;
   background-color: #bec325;
+  margin-right: -5px !important;
+  margin-left: 1%;
 }
 .text-area-big{
   height: 248px !important;
@@ -51,7 +52,8 @@ display: none;
   display: none; 
 }
 .text-min{
-  font-size: 8px;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .myList{
@@ -69,6 +71,7 @@ display: none;
     padding: 10px;
     /*border: solid 2px;*/
     margin-top: -8%;
+    margin-right: 5%;
 }
 
 .list-icons{
@@ -150,3 +153,62 @@ input[type=radio]:checked~.item-inner{
 .accordion-item-content{
   margin-left: 7%;
 }
+
+.listen-color{
+  background-color: #41c3a5;
+}
+.calendar-color{
+  background-color: #bfc325;
+}
+.clubs-color{
+  background-color: #222832;
+}
+.join-color{
+  background-color: #40abf9;
+}
+.net-color{
+  background-color: #ed9022;  
+}
+.menu-style{
+    padding: 10px;
+    display: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff !important;
+}
+.radio-style{
+  display: inline-flex !important;
+}
+.acttive-satate{
+  background-color: red !important;
+}
+
+label.label-checkbox input[type=radio]:checked+.item-media i.icon-form-checkbox{
+      background-color: #5fc4a5 !important;
+}
+label.label-checkbox i.icon-form-checkbox{
+      border: 2px solid #ffffff !important;
+}
+.title-nav{
+      margin-left: 10%;
+
+}
+.theme-gray i.icon-bars{
+  background-image: url("../img/ham-men.png") !important;
+}
+.text-bold{
+  font-weight: bold;
+}
+
+
+.men-nav{
+    background-image: url(../img/juntos-ban.png);
+        width: 90%;
+    height: 100px;
+    background-size: 100% 100%;
+    margin-left: 5%;
+}
+/*.media-list > ul{
+
+  height: 100% !important;
+}*/

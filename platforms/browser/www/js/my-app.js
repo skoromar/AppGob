@@ -6,7 +6,7 @@ var app = new Framework7({
   }
 });
 
-var env = "production";//production -sandbox
+var env = "sandbox";//production -sandbox
 var conf = {
     sandbox:{
       url: "192.168.0.8"//localhost
@@ -39,12 +39,14 @@ var mainView = app.addView('.view-main', {
 // Handle Cordova Device Ready Event
 $$(document).on('deviceready', function() {
     console.log("Device is ready!");
-    $('.listen-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/escuchemos.png")');  
-    $('.video-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos2.png")');  
-    $('.calendar-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/agenda.png")');  
-    $('.net-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/red.png")');  
-    $('.club-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/clubs.png")');  
-    $('.img-background').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos.png")');  
+    // $('.listen-img').css("background-image", 'url("http://'+conf.url+':8000/public/img/escuchemos.png")'); 
+    $('.theme-gray i.icon-bars').css("background-image", 'url("img/ham-men.png")');   
+    $('.listen-img').css("background-image", 'url("img/escuchemos.png")');  
+    $('.video-img').css("background-image", 'url("img/juntos2.png")');  
+    $('.calendar-img').css("background-image", 'url("img/agenda.png")');  
+    $('.net-img').css("background-image", 'url("img/red.png")');  
+    $('.club-img').css("background-image", 'url("img/clubs.png")');  
+    $('.img-background').css("background-image", 'url("img/juntos.png")');  
 });
 
 
@@ -54,16 +56,13 @@ $$(document).on('deviceready', function() {
 // Option 2. Using live 'pageInit' event handlers for each page
 $$(document).on('pageInit', '.page[data-page="index"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    loader();
-     $$(".navbar").css("background-image","none");
-
-      $('.img-background').css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos.png")');  
+    loader("none","222426","");
+      $('.img-background').css("background-image", 'url("img/juntos.png")');  
 
 })
 $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    loader();
-    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/red.png")'); 
+    loader('url("img/red.png")',"ed9022","Red de Atención");
 
 
 
@@ -77,27 +76,7 @@ $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
             arr_i[information_location[x]._id]= information_location[x].information;
             arr_i[information_location[x]._id].name= information_location[x].name;
         }
-        // var arr_i = {
-        //   "123":{
-        //     name:"Aguascalientes",
-        //     locations:[{name:"Aguascalientes",description:"description Aguascalientes",address:"direccion Aguascalientes"}]
-        //   },
-        //   "456":{
-        //     name:"BAJA CALIFORNIA NORTE",
-        //     locations:[
-        //                 {name:"CIJ Mexicali",description:"description Mexicali",address:"direccion Mexicali"},
-        //                 {name:"CIJ Tijuana-Guaycura",description:"description Tijuana-Guaycura",address:"direccion Tijuana-Guaycura"},
-        //                 {name:"CIJ Tijuana-Soler",description:"description Tijuana-Soler",address:"direccion Tijuana-Soler"}
-        //               ]
-        //   },
-        //   "789":{
-        //     name:"BAJA CALIFORNIA SUR",
-        //     locations:[
-        //                 {name:"CIJ La Paz",description:"description La Paz",address:"direccion La Paz"},
-        //                 {name:"CIJ Los Cabos",description:"description Los Cabos",address:"direccion Los Cabos"}
-        //               ]
-        //   }
-        // };
+
         var template ="";
         for(var x in arr_i){
           template+='<li class="accordion-item">'+
@@ -143,15 +122,14 @@ $$(document).on('pageInit', '.page[data-page="faq"]', function (e) {
 
 $$(document).on('pageInit', '.page[data-page="video"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
-    loader()
-    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/juntos2.png")'); 
+    loader('url("img/juntos2.png")',"40abf9","Juntos TV")
     
 })
 
 $$(document).on('pageInit', '.page[data-page="listen"]', function (e) {
-    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/escuchemos.png")'); 
+
     // Following code will be executed for page with data-page attribute equal to "about"
-    loader()
+    loader('url("img/escuchemos.png")','41c3a5','Escuchemos')
     //$$(".banner-action").html('<h3 class="center-text">Cuentanos tu historia, <br> te queremos escuchar</h3>'); 
     $$('.form-to-data').on('click', function(){
       var formData = app.formToJSON('#my-form');
@@ -226,8 +204,7 @@ $$(document).on('pageInit', '.page[data-page="mapad"]', function (e) {
 
     // Following code will be executed for page with data-page attribute equal to "about"
     //debugger;
-    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/clubs.png")'); 
-    loader()
+    loader('url("img/clubs.png")',"222832","Clubs")
     requestServer('get',null,'club',function(resp){
         console.log(resp);
         var information_clubs = resp.data;
@@ -248,9 +225,8 @@ $$(document).on('pageInit', '.page[data-page="mapad"]', function (e) {
 $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
     // Following code will be executed for page with data-page attribute equal to "about"
 
-    $$(".navbar").css("background-image", 'url("http://'+conf.url+':8000/public/img/agenda.png")'); 
 
-    loader()
+    loader('url("img/agenda.png")',"bfc325","Agenda")
     var days = ["Dom","Lun","Mar","Mie","Jue","Vie","Sab"];
     var months= ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
     var month = new Date().getMonth()+1;
@@ -281,6 +257,30 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
       }
       console.log('items_config',items_config);
       console.log('info_fast',info_fast);
+
+    //   var myList = app.virtualList('.list-block.virtual-list', {
+    // // Array with items data
+    //     items: items_config,
+    //     // Template 7 template to render each item
+    //     template: 
+    //               '<li>'+
+    //                   '  <a href="#" class="item-link item-content ">'+
+    //                   '    <div class="item-media">'+
+    //                   '     <div class="row">'+
+    //                   '          <div class="col-100 text-min">{{date}}</div>'+
+    //                   '          <div class="col-100 text-min">{{hour}}</div>'+
+    //                   '        </div>'+
+    //                   '    </div>'+
+    //                   '    <div class="item-inner">'+
+    //                   '      <div class="item-title-row">'+
+    //                   '        <div class="item-title">{{title}}</div>'+
+    //                   '      </div>'+
+    //                   '      <div class="item-subtitle">{{address}}</div>'+
+    //                   '    </div>'+
+    //                   '  </a>'+
+    //                   '</li>'
+
+    //   });   
       var myList = app.virtualList('.list-block.virtual-list', {
     // Array with items data
         items: items_config,
@@ -288,7 +288,7 @@ $$(document).on('pageInit', '.page[data-page="calendar"]', function (e) {
         template: '<li class="item-content">' +
                       '<div class="item-media"><img width="30" height="30" src="{{picture}}"></div>' +
                       '<div class="item-inner">' +
-                          '<div class="item-title">{{title}}</div>' +
+                          '<div class="item-title text-bold">{{title}}</div>' +
                           '<div class="item-after"> '+
                               '<label class="label-checkbox item-content myList">'+
                                ' <div class="row">'+
@@ -362,7 +362,12 @@ function requestServer(methos_req,data_req,api_get,Callback){
 }
 
 
-function loader(){
+
+function loader(image,color,title){
+  $$(".title-nav").html(title)
+  $$(".navbar").css("background-color","#"+color);
+  $$(".navbar-inner").css("background-image", image); 
+  $$(".navbar-inner").css("background-repeat", 'no-repeat'); 
   app.closePanel("left");
   app.showPreloader();
   setTimeout(function () {
