@@ -20,7 +20,6 @@
     <platform name="android">
         <preference name="android-minSdkVersion" value="19" />
         <allow-intent href="market:*" />
-        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -31,6 +30,7 @@
     <plugin name="cordova-plugin-whitelist" spec="~1.2.0" />
     <plugin name="cordova-plugin-console" spec="~1.0.1" />
     <plugin name="cordova-plugin-statusbar" spec="~1.0.1" />
-    <preference name="GOOGLE_MAPS_ANDROID_API_KEY"  value="AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck"/>
-    
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyBe0T8526348cBO2vigGAsNqqCS-jwy8Ck" />
+    <engine name="browser" />
+    <engine name="android" spec="^8.0.0" />
 </widget>
